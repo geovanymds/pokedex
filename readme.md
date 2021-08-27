@@ -1,4 +1,8 @@
-# RUNNING THE PROJECT
+# Pokedex
+
+A mobile application built in React Native to simulate a pokedex.
+
+## RUNNING THE PROJECT
 
 - First install the dependencies using the command below.
 ```npm install```
