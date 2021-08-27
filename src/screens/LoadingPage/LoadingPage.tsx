@@ -1,4 +1,5 @@
- import React from 'react';
+ import React, {useEffect} from 'react';
+ import { NativeStackScreenProps } from '@react-navigation/native-stack';
  import {
    View,
    Animated,
@@ -7,8 +8,13 @@
 
 import styles from "./styles";
  
-const LoadingPage = () => {
+const LoadingPage = ({navigation}:NativeStackScreenProps<any>) => {
 
+  useEffect(()=>{
+    setTimeout(()=>{
+      navigation.navigate('PokedexList');
+    },1000)
+  },[]);
   const spinValue = new Animated.Value(0);
 
   Animated.timing(

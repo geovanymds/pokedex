@@ -1,10 +1,11 @@
 import React from 'react';
-import LoadingPage from './src/pages/LoadingPage/LoadingPage'
-import PokedexList from './src/pages/PokedexList/PokedexList';
+import Navigation from './src/navigation/Navigation';
+import LoadingPage from './src/screens/LoadingPage/LoadingPage'
+import PokedexList from './src/screens/PokedexList/PokedexList';
 const App = () => {
   
   return (
-    <PokedexList/>
+    <Navigation/>
   );
 };
 

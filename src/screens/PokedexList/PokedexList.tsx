@@ -6,6 +6,7 @@ import {
 import ApiPokemonProvider from '../../providers/ApiPokemonProvider';
 import IPokemon from '../../interfaces/IPokemon';
 import PokemonCard from '../../components/PokemonCard/PokemonCard';
+import Loading from '../../components/Loading/Loading';
 // import styles from "./styles";
 const PokedexList: React.FC = () => {
 
@@ -45,7 +46,7 @@ const PokedexList: React.FC = () => {
         <PokemonCard pokemon={item} />
       )}
       keyExtractor={item => item.name}
-    /> : <Text>Vazio</Text>
+    /> : <Loading/>
   );
 };
 
