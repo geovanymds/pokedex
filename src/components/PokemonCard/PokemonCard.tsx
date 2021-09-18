@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { pure } from 'recompose';
 import {Image, Text, TouchableOpacity} from 'react-native';
 import generateImageSrcUrl from '../../utils/GenerateImageSrcUrl';
 import IPokemon from '../../interfaces/IPokemon';
@@ -38,4 +39,4 @@ const PokemonCard: React.FC<Props> = ({pokemon}) => {
   );
 };
 
-export default PokemonCard;
+export default pure(PokemonCard);

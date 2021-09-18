@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useCallback} from 'react';
-import {FlatList} from 'react-native';
+import {FlatList, View} from 'react-native';
 import ApiPokemonProvider from '../../providers/ApiPokemonProvider';
 import IPokemon from '../../interfaces/IPokemon';
 import PokemonCard from '../../components/PokemonCard/PokemonCard';
@@ -38,19 +38,24 @@ const PokedexList: React.FC = () => {
   }, []);
 
   return pokemonList.length > 0 ? (
-    <FlatList
-      keyboardShouldPersistTaps="never"
-      columnWrapperStyle={{justifyContent: 'center'}}
-      showsVerticalScrollIndicator={false}
-      numColumns={2}
-      data={pokemonList}
-      renderItem={renderItem}
-      keyExtractor={item => item.name}
-      onEndReached={fetchPokemons}
-      onEndReachedThreshold={0.2}
-      initialNumToRender={10} // Vary According to your screen size take a lumsum according to your item height
-      removeClippedSubviews={true}
-    />
+    <View>
+      <FlatList
+        keyboardShouldPersistTaps="never"
+        columnWrapperStyle={{justifyContent: 'center'}}
+        showsVerticalScrollIndicator={false}
+        numColumns={2}
+        data={pokemonList}
+        renderItem={renderItem}
+        keyExtractor={item => item.name}
+        onEndReached={fetchPokemons}
+        onEndReachedThreshold={0.2}
+        removeClippedSubviews={true}
+      />
+
+      <View  style={{marginBottom: 300}}>
+        {loading && <Loading/>}
+      </View>
+    </View>
   ) : (
     <Loading />
   );
