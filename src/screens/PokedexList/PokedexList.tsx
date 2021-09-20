@@ -51,10 +51,6 @@ const PokedexList: React.FC = () => {
         onEndReachedThreshold={0.2}
         removeClippedSubviews={true}
       />
-
-      <View  style={{marginBottom: 300}}>
-        {loading && <Loading/>}
-      </View>
     </View>
   ) : (
     <Loading />
