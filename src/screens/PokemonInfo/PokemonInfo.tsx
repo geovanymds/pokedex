@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 import {View, Image, Text} from 'react-native';
 import IPokemon from '../../interfaces/IPokemon';
 import {useRoute} from '@react-navigation/native';
-import generateImageSrcUrl from '../../utils/GenerateImageSrcUrl';
+import {generateImageSrcUrlByNumber} from '../../utils/GenerateImageSrcUrl';
 import ApiPokemonProvider from '../../providers/ApiPokemonProvider';
 import TypeCard from '../../components/TypeCard/TypeCard';
 import StatsChart from '../../components/StatsChart/StatsChart';
 import styles from './styles';
+
 interface Props {
   selectedPokemon: IPokemon;
 }
@@ -37,8 +38,8 @@ const PokemonInfo: React.FC<Props> = () => {
         <View>
           <Image
             source={{
-              uri: !!pokemon.url
-                ? generateImageSrcUrl(pokemon.url)
+              uri: !!pokemon.number
+                ? generateImageSrcUrlByNumber(pokemon.number)
                 : 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png',
             }}
             style={styles.image}
@@ -71,7 +72,7 @@ const PokemonInfo: React.FC<Props> = () => {
             </View>
           </View>
           <View style={styles.statsChart}>
-            <StatsChart stats={pokemon.stats} />
+            {pokemon.stats && <StatsChart stats={pokemon.stats} />}
           </View>
         </View>
       )}

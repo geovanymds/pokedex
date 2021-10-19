@@ -6,6 +6,7 @@ export default StyleSheet.create({
     padding: 10,
     alignSelf: 'center',
     borderRadius: 7,
+    margin: 10
   },
   type: {
     color: '#FFF',

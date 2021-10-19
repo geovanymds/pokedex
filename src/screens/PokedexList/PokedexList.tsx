@@ -4,6 +4,7 @@ import ApiPokemonProvider from '../../providers/ApiPokemonProvider';
 import IPokemon from '../../interfaces/IPokemon';
 import PokemonCard from '../../components/PokemonCard/PokemonCard';
 import Loading from '../../components/Loading/Loading';
+import SearchBar from '../../components/SearchBar/SearchBar';
 // import styles from "./styles";
 const PokedexList: React.FC = () => {
   const [pokemonList, setPokemonList] = useState<IPokemon[]>([]);
@@ -39,6 +40,7 @@ const PokedexList: React.FC = () => {
 
   return pokemonList.length > 0 ? (
     <View>
+      <SearchBar/>
       <FlatList
         keyboardShouldPersistTaps="never"
         columnWrapperStyle={{justifyContent: 'center'}}

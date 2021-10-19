@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { pure } from 'recompose';
 import {Image, Text, TouchableOpacity} from 'react-native';
-import generateImageSrcUrl from '../../utils/GenerateImageSrcUrl';
+import {generateImageSrcUrlByNumber,getPokemonNumber} from '../../utils/GenerateImageSrcUrl';
 import IPokemon from '../../interfaces/IPokemon';
 import LinearGradient from 'react-native-linear-gradient';
 import {useNavigation} from '@react-navigation/native';
@@ -28,7 +28,7 @@ const PokemonCard: React.FC<Props> = ({pokemon}) => {
         <Image
           source={{
             uri: !!pokemonInfo.url
-              ? generateImageSrcUrl(pokemonInfo.url)
+              ? generateImageSrcUrlByNumber(getPokemonNumber(pokemonInfo.url))
               : 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png',
           }}
           style={styles.image}

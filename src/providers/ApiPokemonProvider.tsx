@@ -41,6 +41,7 @@ class ApiPokemonProvider {
         }),
         height: data.height,
         weight: data.weight,
+        number: data.id,
         stats: data.stats.map((statObject: any): any => {
           return {
             name: statObject.stat.name,

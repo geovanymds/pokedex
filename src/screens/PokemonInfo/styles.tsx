@@ -29,7 +29,6 @@ export default StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    paddingRight: 10,
   },
   image: {
     width: 300,
